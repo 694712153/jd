@@ -1,0 +1,163 @@
+/* 1. 在主页的less文件 去引入公共base.less */
+
+@import 'base.less';
+
+#slide {
+    img {
+        width: 100%;
+    }
+    /* swiper小圆点的样式 */
+    .swiper-pagination-bullet{
+        background-color: transparent;
+        border:1px solid #fff;
+        opacity:1;
+        width: 6px;
+        height: 6px;
+        &.swiper-pagination-bullet-active{
+            background-color: #fff;
+        }
+    }
+}
+
+
+/* 导航区域样式 */
+
+#nav {
+    padding: 10px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 25%;
+            >a {
+                display: block;
+                text-align: center;
+                >img {
+                    width: 40px;
+                    height: 40px;
+                }
+                >p {
+                    font-size: 14px;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+
+/* 主体商品容器 */
+
+#main {
+    padding:10px;
+    background-color: #f5f5f5;
+    /* 秒杀商品样式 */
+    .seckill {
+        margin-top: 10px;
+        background-color: #fff;
+        /* 水平偏移 垂直偏移 模糊度 颜色 */
+        box-shadow: 0px 0px 1px @border-color;
+        .title {
+            line-height: 30px;
+            .seckill-icon {
+                width: 20px;
+                height: 25px;
+                margin-left: 5px;            
+            }
+            .seckill-name {
+                color: @main-color;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            .seckill-time {
+                margin-left: 5px;
+                >span {
+                    width: 15px;
+                    height: 15px;
+                    display: inline-block;
+                    line-height: 15px;
+                    text-align: center;
+                    background-color: #000;
+                    color: #fff;
+                    &:nth-child(3n) {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+            .seckill-more {
+                float: right;
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+        .content {
+            padding:10px 0;
+            ul {
+                display:flex;
+                >li {
+                    width:33.33%;
+                    >a {
+                        display: block;
+                        text-align: center;
+                        >img {
+                            width: 110px;
+                        }
+                        >p {
+                            font-size: 12px;
+                            &:first-of-type{
+                                color:@main-color;
+                            }
+                            &:last-of-type{
+                                color:#ccc;
+                            }
+                        }
+                    }
+                    /* 相邻的下一个兄弟选择器 */
+                    &+li{
+                        border-left: 1px solid @border-color;
+                    }
+                    /* &~li{
+                        border-left: 1px solid @border-color;
+                    } */
+                }
+            }
+        }
+    }
+    /* 京东超市商品的样式 */
+    .jd-market{
+        margin-top: 20px;
+        box-shadow:0px 0px 1px @border-color;
+        background-color: #fff;
+        .title{
+            >h4{
+                position: relative;
+                padding-left: 20px;
+                font-weight: normal;
+                line-height: 30px;
+                &::before{
+                    content:'';
+                    position: absolute;
+                    left: 10px;
+                    top: 7px;
+                    width: 4px;
+                    height: 15px;
+                    background-color: @main-color;
+                }
+            }
+        }
+        .content{
+            display: flex;
+            .left,.right{
+                width: 50%;
+                >a{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
